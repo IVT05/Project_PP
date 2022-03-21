@@ -1,20 +1,21 @@
 package IVT05.PP;
 
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloController {
+public class IndexController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
-    @GetMapping("/hi")
-    public Hello hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Hello(counter.incrementAndGet(), String.format(template, name));
+    @GetMapping("/Index")
+    public String index() {
+        Index index1 = new Index("src\\main\\java\\IVT05\\PP\\Index.html");
+        return index1.getHtml();
     }
 
 }

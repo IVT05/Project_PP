@@ -9,7 +9,10 @@ public class Hello {
         this.id = id;
         this.content = content;
     }
-
+    public Hello() {
+        this.id = 0;
+        this.content = "example";
+    }
     public long getId() {
         return id;
     }
@@ -17,4 +20,6 @@ public class Hello {
     public String getContent() {
         return content;
     }
+
+
 }
